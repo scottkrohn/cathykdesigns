@@ -6,13 +6,14 @@ import { Navbar } from 'react-bootstrap';
 import NavLink from './nav-link';
 
 // Assets
-import logo from '../../../assets/images/new-logo.png';
+import logo from '../../../assets/images/logo.jpg';
 import Social from '../social/social';
 
 import './navigation.css';
 
 const PAGE_NAMES = {
 	HOME: 'home',
+	SHOP: 'shop',
 	ABOUT: 'about',
 	CONTACT: 'contact',
 };
@@ -37,13 +38,15 @@ class Navigation extends Component {
 		return (
 			<div className="navigation-container">
 				<nav className="navbar navbar-expand-lg navbar-light bg-light">
-					<Link
-						to="/"
-						onClick={() => {this.setActiveName(PAGE_NAMES.HOME);}}
-						className="navbar-brand"
-					>
-						<img src={logo} />
-					</Link>
+					<div className="brand-wrap">
+						<Link
+							to="/"
+							onClick={() => {this.setActiveName(PAGE_NAMES.HOME);}}
+							className="navbar-brand"
+						>
+							<img src={logo} height={200} width={200}></img>
+						</Link>
+					</div>
 					<button
 						className="navbar-toggler"
 						type="button"
@@ -65,6 +68,13 @@ class Navigation extends Component {
 								label="Home"
 							/>
 							<NavLink
+								to="/shop"
+								onClick={this.setActiveName}
+								activeName={this.state.activeName}
+								name={PAGE_NAMES.SHOP}
+								label="Shop"
+							/>
+							<NavLink
 								to="/about"
 								onClick={this.setActiveName}
 								activeName={this.state.activeName}
@@ -79,7 +89,7 @@ class Navigation extends Component {
 								label="Contact"
 							/>
 						</ul>
-						<span className="">
+						<span className="social-container">
 							<Social />
 						</span>
 					</div>

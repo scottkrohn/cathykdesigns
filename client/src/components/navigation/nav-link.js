@@ -1,7 +1,9 @@
 import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
 
-import autobind from 'auto-bind'
+import autobind from 'auto-bind';
+
+import './navigation.css';
 
 class NavLink extends PureComponent {
 	constructor(props) {
@@ -22,7 +24,7 @@ class NavLink extends PureComponent {
 
 
 		return (
-			<li className="nav-item">
+			<li className="nav-item nav-link">
 				<Link onClick={this.handleClick} className={classNames.join(' ')} to={this.props.to}>{this.props.label}</Link>
 			</li>
 		);

@@ -18,7 +18,7 @@ if (env === 'production') {
 	app.use(express.static(path.join(__dirname, 'build')));
 
 	app.get('*', function(req, res) {
-		res.sendFile(path.resolve(__dirname + 'client/src/index.html'));
+		res.sendFile(path.resolve(__dirname + '/client/src/index.html'));
 	});
 } else {
 	// Serve react code with webpack for development.

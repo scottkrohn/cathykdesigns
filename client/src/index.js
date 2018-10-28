@@ -31,35 +31,3 @@ ReactDOM.render(
 	</Provider>,
 	document.getElementById('root')
 );
-
-// import React from "react";
-// import ReactDOM from "react-dom";
-// import App from "./App";
-// import { applyMiddleware, compose, createStore, combineReducers } from "redux";
-// import { Provider } from "react-redux";
-// import { BrowserRouter, Route } from "react-router-dom";
-
-// import rootReducer from "./reducers/rootReducer";
-// import thunk from "redux-thunk";
-
-// import "./index.css";
-// import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-// import "../node_modules/font-awesome/css/font-awesome.min.css";
-
-// const allReducers = combineReducers(rootReducer);
-
-// const allStoreEnhancers = compose(
-// 	applyMiddleware(thunk),
-// 	window.devToolsExtension && window.devToolsExtension()
-// );
-
-// const store = createStore(allReducers, {}, allStoreEnhancers);
-
-// ReactDOM.render(
-// 	<Provider store={store}>
-// 		<BrowserRouter>
-// 			<App />
-// 		</BrowserRouter>
-// 	</Provider>,
-// 	document.getElementById("root")
-// );

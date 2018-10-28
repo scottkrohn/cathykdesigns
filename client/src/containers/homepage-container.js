@@ -1,6 +1,17 @@
 import React, { Component } from 'react';
+import { connect } from "react-redux";
+
+// Actions
+import { getShopInformation } from '../actions/shop-actions';
 
 class HomepageContainer extends Component {
+
+	componentDidMount() {
+		if (this.props.shop === null) {
+			this.props.getShopInformation();
+		}
+	}
+
 	render() {
 		return (
 			<div>
@@ -10,4 +21,13 @@ class HomepageContainer extends Component {
 	}
 }
 
-export default HomepageContainer;
+const mapStateToProps = state => state;
+
+const mapActionsToProps = {
+	getShopInformation,
+};
+
+export default connect(
+	mapStateToProps,
+	mapActionsToProps
+)(HomepageContainer);

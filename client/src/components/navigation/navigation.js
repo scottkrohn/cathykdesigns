@@ -16,6 +16,7 @@ const PAGE_NAMES = {
 	SHOP: 'shop',
 	ABOUT: 'about',
 	CONTACT: 'contact',
+	FAQ: 'faq',
 };
 
 class Navigation extends Component {
@@ -87,6 +88,13 @@ class Navigation extends Component {
 								activeName={this.state.activeName}
 								name={PAGE_NAMES.CONTACT}
 								label="Contact"
+							/>
+							<NavLink
+								to="/faq"
+								onClick={this.setActiveName}
+								activeName={this.state.activeName}
+								name={PAGE_NAMES.FAQ}
+								label="FAQ"
 							/>
 						</ul>
 						<span className="social-container">

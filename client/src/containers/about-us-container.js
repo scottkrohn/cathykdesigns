@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from "react-redux";
+
+// Actions
+import { getShopInformation } from '../actions/shop-actions';
 
 class AboutUsContainer extends Component {
 	render() {
@@ -8,4 +12,12 @@ class AboutUsContainer extends Component {
 	};
 };
 
-export default AboutUsContainer;
+const mapStateToProps = state => state;
+
+const mapActionsToProps = {
+};
+
+export default connect(
+	mapStateToProps,
+	mapActionsToProps
+)(AboutUsContainer);

@@ -6,6 +6,7 @@ import HomepageContainer from '../src/containers/homepage-container';
 import ShopContainer from '../src/containers/shop-container';
 import AboutUsContainer from './containers/about-us-container';
 import ContactContainer from './containers/contact-container';
+import FaqContainer from './containers/faq-container';
 
 class Router extends Component {
 	render() {
@@ -15,6 +16,7 @@ class Router extends Component {
 				<Route exact path='/about' component={AboutUsContainer}/>
 				<Route exact path='/contact' component={ContactContainer}/>
 				<Route exact path='/shop' component={ShopContainer}/>
+				<Route exact path='/faq' component={FaqContainer}/>
 			</Switch>
 		);
 	}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import autobind from 'auto-bind';
+import { get} from 'lodash';
 
 import { Navbar } from 'react-bootstrap';
 import NavLink from './nav-link';
@@ -24,9 +25,25 @@ class Navigation extends Component {
 		super(props);
 		autobind(this);
 
+		const currentPage = this.getCurrentPageName();
+
 		this.state = {
-			activeName: PAGE_NAMES.HOME,
+			activeName: currentPage,
 		};
+	}
+
+	getCurrentPageName() {
+		let currentPage = PAGE_NAMES.HOME;
+
+		const pathName = get(window, 'location.pathname', null);
+		if (pathName) {
+			const pathParts = pathName.split('/').filter((str) => (str));
+			if (pathParts.length) {
+				currentPage = get(pathParts, '[0]');
+			}
+		}
+
+		return currentPage;
 	}
 
 	setActiveName(name) {

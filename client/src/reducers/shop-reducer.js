@@ -8,25 +8,25 @@ function shopReducer(state = initialState, { type, payload }) {
 	switch (type) {
 		case SHOP_INFO_REQUEST: {
 			return {
+				...state,
 				loading: true,
 				error: false,
-				...state,
 			};
 		}
 		case SHOP_INFO_SUCCESS: {
 			return {
+				...state,
 				loading: false,
 				error: false,
 				shopInformation: parseShopInformation(payload.shopInformation),
-				...state,
 			};
 		}
 		case SHOP_INFO_ERROR: {
 			return {
+				...state,
 				loading: false,
 				error: true,
 				errorInfo: payload.errorInfo,
-				...state,
 			};
 		}
 		default: {
@@ -44,7 +44,6 @@ function parseShopInformation(shopInformation) {
 		info = result;
 	}
 
-	console.log(JSON.stringify(info));
 	return info;
 }
 

@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import { Button } from 'antd';
+import Button from '@material-ui/core/Button';
 
 class ContactContainer extends Component {
 	render() {
 		return (
 			<div>
 				I'm the contact us page!
-				<Button type="primary">hello</Button>
+				<Button variant="contained" color="primary">hello</Button>
+				<Button variant="contained" color="primary">hello</Button>
+				<Button variant="contained" color="primary">hello</Button>
 			</div>
 		);
 	}

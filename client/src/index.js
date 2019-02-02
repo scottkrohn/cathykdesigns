@@ -14,6 +14,8 @@ import '../../node_modules/bootstrap/dist/js/bootstrap.min.js';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import 'typeface-roboto';
 
+import Dialog from '@material-ui/core/Dialog';
+
 import App from './app';
 
 const allStoreEnhancers = compose(
@@ -25,10 +27,13 @@ const allReducers = combineReducers(rootReducer);
 const store = createStore(allReducers, {}, allStoreEnhancers);
 
 ReactDOM.render(
-	<Provider store={store}>
-		<BrowserRouter>
-			<App />
-		</BrowserRouter>
-	</Provider>,
+	<div>
+		<Dialog open={true}>Hello</Dialog>
+	</div>,
+	// <Provider store={store}>
+	// 	<BrowserRouter>
+	// 		<App />
+	// 	</BrowserRouter>
+	// </Provider>,
 	document.getElementById('root')
 );

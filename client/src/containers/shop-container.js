@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 class ShopContainer extends Component {
-	render() {
+	render = () => {
 		return (
 			<div>This is the Shop!</div>
 		);

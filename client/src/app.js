@@ -9,7 +9,7 @@ import { Route } from 'react-router-dom';
 import './app.css';
 
 class App extends Component {
-	render() {
+	render = () => {
 		return (
 			<div className="app-container">
 				<Navigation className='app-navigation' />

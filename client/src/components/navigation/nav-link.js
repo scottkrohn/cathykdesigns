@@ -1,21 +1,18 @@
 import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
 
-import autobind from 'auto-bind';
-
 import './navigation.css';
 
 class NavLink extends PureComponent {
 	constructor(props) {
 		super(props);
-		autobind(this);
 	}
 
-	handleClick() {
+	handleClick = () => {
 		this.props.onClick(this.props.name);
 	}
 
-	render() {
+	render = () => {
 
 		const classNames = ['nav-link'];
 		if (this.props.activeName === this.props.name) {

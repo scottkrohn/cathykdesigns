@@ -6,13 +6,13 @@ import { getShopInformation } from '../actions/shop-actions';
 
 class HomepageContainer extends Component {
 
-	componentDidMount() {
+	componentDidMount = () =>  {
 		if (this.props.shop === null) {
 			this.props.getShopInformation();
 		}
 	}
 
-	render() {
+	render = () => {
 		return (
 			<div>
 				I'm the homepage container

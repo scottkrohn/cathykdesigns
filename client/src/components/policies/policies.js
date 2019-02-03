@@ -11,27 +11,27 @@ import Policy from '../policy/policy';
 
 class Policies extends Component {
 
-	componentDidMount() {
+	componentDidMount = () => {
 		if (this.props.shop === null) {
 			this.props.getShopInformation();
 		}
 	}
 
-	getRefundPolicies() {
+	getRefundPolicies = () => {
 		const refundPolicy = get(this.props, 'shop.shopInformation.policy_refunds');
 		return this.parseSpaceSeparatedArray(refundPolicy);
 	}
 
-	getShippingPolicies() {
+	getShippingPolicies = () => {
 		const shippingPolicy = get(this.props, 'shop.shopInformation.policy_shipping');
 		return this.parseSpaceSeparatedArray(shippingPolicy);
 	}
 
-	getPrivacyPolicies() {
+	getPrivacyPolicies = () => {
 		return get(this.props, 'shop.shopInformation.policy_privacy');
 	}
 
-	parseSpaceSeparatedArray(policyString) {
+	parseSpaceSeparatedArray = (policyString) => {
 		const sections = [];
 
 		if (typeof policyString === 'string') {
@@ -58,7 +58,7 @@ class Policies extends Component {
 		return sections;
 	}
 
-	render() {
+	render = () => {
 		const propsLoading = get(this.props, 'shop.loading');
 		const propsError = get(this.props, 'shop.error');
 

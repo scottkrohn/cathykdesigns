@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import autobind from 'auto-bind';
 import { get} from 'lodash';
 
 import { Navbar } from 'react-bootstrap';
@@ -23,7 +22,6 @@ const PAGE_NAMES = {
 class Navigation extends Component {
 	constructor(props) {
 		super(props);
-		autobind(this);
 
 		const currentPage = this.getCurrentPageName();
 
@@ -32,7 +30,7 @@ class Navigation extends Component {
 		};
 	}
 
-	getCurrentPageName() {
+	getCurrentPageName = () => {
 		let currentPage = PAGE_NAMES.HOME;
 
 		const pathName = get(window, 'location.pathname', null);
@@ -46,13 +44,13 @@ class Navigation extends Component {
 		return currentPage;
 	}
 
-	setActiveName(name) {
+	setActiveName = (name) => {
 		this.setState({
 			activeName: name,
 		});
 	}
 
-	render() {
+	render = () => {
 		return (
 			<div className="navigation-container">
 				<nav className="navbar navbar-expand-lg navbar-light bg-light">

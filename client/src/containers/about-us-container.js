@@ -8,7 +8,7 @@ import { getShopInformation } from '../actions/shop-actions';
 import Policies from '../components/policies/policies';
 
 class AboutUsContainer extends Component {
-	render() {
+	render = () => {
 		return (
 			<Policies />
 		);

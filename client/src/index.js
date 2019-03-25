@@ -16,10 +16,12 @@ import 'typeface-roboto';
 
 import App from './app';
 
-const allStoreEnhancers = compose(
-	applyMiddleware(thunk),
-	window.devToolsExtension && window.devToolsExtension()
-);
+const composeEnhancers =
+	(typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__)
+		? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({})
+		: compose;
+
+const allStoreEnhancers = composeEnhancers(applyMiddleware(thunk));
 
 const allReducers = combineReducers(rootReducer);
 const store = createStore(allReducers, {}, allStoreEnhancers);
